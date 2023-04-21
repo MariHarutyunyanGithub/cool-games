@@ -29,7 +29,8 @@ def chooseWord():
     with open('words.txt') as file:
         text = file.read()
         ls = text.split()
-        idx = random.randint(0, len(ls))
+        idx = random.randint(0, len(ls) - 1)
+        print(idx)
         print(ls[idx], '(for easy test)')
         return ls[idx]
             
@@ -47,8 +48,11 @@ def render(word):
     return closier
 
 def punishment():
-    image = '''                          ------------
-                            |       |
+    image = ' ' * 27
+    image += '-' * 8 
+    image += ' '* 3  
+    image += '''    
+                            |     |
                             |        
                             |          
                             |        
@@ -68,14 +72,13 @@ def punishment():
             case 1: image[228] = '/'
             case 0: 
                 image[230] = '\\'
-                # image[189] = '/'
-                # image[191] = '\\'
                 image[150] = '/'
                 image[152] = '\\'
         return ''.join(image)
     return closier
 
 def playAgain():
+    print('do you want to try again?y/n :  ')
     while True:
         ans = input()
         if ans.lower() == 'y':
@@ -91,7 +94,7 @@ def playAgain():
 def game(word):
     print('\n\t\t\t\tWellcome\U0001F60A')
     print('\n\n\t\t\tLets play Hangman game...\n\n')
-    print('\tplease enter any letter to guess the number we have memorized.')
+    print('\tplease enter any letter to guess the word we have memorized.')
     print(f'\n\t\t\tAs a hint, our word looks like this\n')
     print('\t\t\t\t', end = '')
     chance = 6
@@ -99,7 +102,7 @@ def game(word):
     for i in range(len(word)):
         print('-  ', end = '')
     print(f'\n\n\t\t\tyou have {chance} chances to be wrong\n')
-    print('\t\t\totherwise your end will be bad\U0001F47F')
+    print('\t\t\tguess the word or i will get angry...\n\n\t\t\t your end will be bad\U0001F47F\n')
     print(penalty(chance))
     display = render(word)
     while chance:
@@ -112,7 +115,6 @@ def game(word):
             print(f'\n\t\t\t{result}')
             if chance == 0:
                 print('\n\t\t\t\tGAME OVER!\n\n')
-                print('do you want to try again?y/n :  ')
                 playAgain()
 
 

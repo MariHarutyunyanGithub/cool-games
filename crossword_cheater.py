@@ -19,7 +19,7 @@ def matched(str):
                 if str[j] != '.' and str[j] != line[j]:                    
                     same = False
                     break
-            if same:
+            if same and line[:-1] not in result:
                 result.append(line[:-1])
     if len(result):
         print('\nthere are all matches\n')

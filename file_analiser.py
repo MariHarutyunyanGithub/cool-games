@@ -34,7 +34,7 @@ def wordCount():
 def characterCount():
     file = opening()
     count = 0
-    for lines in file.readline():
+    for lines in file.readlines():
         for i in lines:
             count += 1
     file.close()
@@ -82,9 +82,10 @@ def Word_Search(word):
                 ls.append(count)
     file.close()
     if len(ls) > 1:
-        print(f'\'{word}\' in {file.name} on lines')
+        print(f'\'{word}\' in \'{file.name}\' on lines')
     elif not len(ls):
-        print(f'\nThere is not such word in {file.name}')
+        print(f'\nThere is not such word in \'{file.name}\'')
+        return
     else:
         print(f'\'{word}\' in {file.name} on line')
     return ls
@@ -112,9 +113,12 @@ def variants():
         print('\t\t\t\t[6] ------------------- Exit')
         try:
             answer = int(input('\n\n\t\t\t\tyour choice\t'))
-            break
+            if answer in (1, 2, 3, 4, 5, 6):
+                break
+            print('please, input from range [1:6]\n')
         except:
             print('\nyour input is not valid, please input an intager value\n')
+            
     functions(answer)
 
 def functions(key):
