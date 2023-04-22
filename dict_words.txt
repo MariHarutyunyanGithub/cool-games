@@ -1,0 +1,9 @@
+user
+computer
+password
+login
+assembly
+keyword
+analizer
+kill
+terror

@@ -160,6 +160,6 @@ def sortBooks():
     wellcome()
 
 
-print("\n\n\t    Wellcome to contact management system".upper(), '\n\n')
+print("\n\n\t\t    WELLCOME TO LIBRARY\n\n")
 fillInfo()
 wellcome()
