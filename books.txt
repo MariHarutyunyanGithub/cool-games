@@ -1,0 +1,7 @@
+Code - The Hidden Language of Computer Hardware and Software|Charlez Petzold|2022|
+C++ For Proffessionals|M. Gregoire|2021|
+C++|Prata|2019|
+Effective C++|Scott Meyers|2012|
+More Effective C++|Scott Meyers|2018|
+Effective Modern C++|Scott Meyers|2022|
+The C++ Programming Language|Bjarne Stroustrup|2013|

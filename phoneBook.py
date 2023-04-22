@@ -53,7 +53,7 @@ def wellcome():
             key = int(input('\n\nyour choice\t'))
             if key in (1, 2, 3, 4):
                 break
-            print('please, input from range [1:6]\n')
+            print('please, input from range [1:4]\n')
         except:
             print('\nyour input is not valid, please input an intager value\n')                
     funcDeduce(key)
@@ -99,7 +99,6 @@ def createAddress():
         address = input('input address : ')
         for i in address:
             if (not i.isalpha() and not i.isdigit()) and (i not in('_', '-', '/', '.', ',', ' ')):
-                print(i)
                 valid = False
                 break
         if valid:
